@@ -6,6 +6,7 @@
 namespace MSBios\Voting;
 
 use MSBios\Stdlib\ObjectInterface;
+use Zend\Config\Config;
 
 /**
  * Class PollManager
@@ -14,13 +15,26 @@ use MSBios\Stdlib\ObjectInterface;
  */
 class PollManager implements PollManagerInterface
 {
+    /** @var Config */
+    protected $polls;
+
+    /**
+     * PollManager constructor.
+     * @param Config $polls
+     */
+    public function __construct(Config $polls)
+    {
+        $this->polls = $polls;
+    }
+
     /**
      * @param $id
      * @param null $relation
+     * @return mixed
      */
     public function find($id, $relation = null)
     {
-        // TODO: Implement find() method.
+        return $this->polls->get($id);
     }
 
     /**
