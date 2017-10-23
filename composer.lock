@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f7b7726a927a68130a3c206ea2eb8ec",
+    "content-hash": "3d5ff3c99a81c7304f046ace9fdf6eea",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -134,6 +134,57 @@
                 "php"
             ],
             "time": "2017-09-13T07:21:16+00:00"
+        },
+        {
+            "name": "msbios/voting-resource",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/msbios/msbios-voting-resource.git",
+                "reference": "4f1441d9f64309dbcf7ea0386315ad523193d474"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/msbios/msbios-voting-resource/zipball/4f1441d9f64309dbcf7ea0386315ad523193d474",
+                "reference": "4f1441d9f64309dbcf7ea0386315ad523193d474",
+                "shasum": ""
+            },
+            "require": {
+                "msbios/msbios": "^1.0",
+                "zendframework/zend-form": "^2.10"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.0",
+                "zendframework/zend-test": "^3.1"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "component": "MSBios\\Voting\\Resource"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MSBios\\Voting\\Resource\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Judzhin Miles",
+                    "email": "info@msbios.com"
+                }
+            ],
+            "description": "MSBios Voting Resource",
+            "homepage": "https://github.com/msbios/msbios-voting-resource",
+            "keywords": [
+                "php"
+            ],
+            "time": "2017-10-12T13:34:38+00:00"
         },
         {
             "name": "psr/container",

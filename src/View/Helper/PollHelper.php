@@ -63,10 +63,10 @@ class PollHelper extends AbstractHelper implements FormElementAwareInterface
     }
 
     /**
-     * @param PollInterface $poll
+     * @param ObjectInterface $poll
      * @return FormInterface
      */
-    public function form(PollInterface $poll)
+    public function form(ObjectInterface $poll)
     {
         // add radio values $this->form
         return $this->getFormElement();
