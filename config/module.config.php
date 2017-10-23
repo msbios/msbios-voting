@@ -26,6 +26,13 @@ return [
         ]
     ],
 
+    'form_elements' => [
+        'factories' => [
+            PollForm::class =>
+                InvokableFactory::class
+        ]
+    ],
+
     'view_helpers' => [
         'factories' => [
             View\Helper\PollHelper::class =>
