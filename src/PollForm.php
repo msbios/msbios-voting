@@ -29,5 +29,4 @@ class PollForm extends Form
             'name' => 'poll_relation'
         ]);
     }
-
 }

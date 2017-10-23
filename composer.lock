@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "086e052d5b7f7c4fd869b9f0d104d341",
+    "content-hash": "7f7b7726a927a68130a3c206ea2eb8ec",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -39,16 +39,16 @@
         },
         {
             "name": "msbios/form",
-            "version": "v1.0.0",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-form.git",
-                "reference": "fd92e72ecfaab9a3b2e271e7752902e67b63a835"
+                "reference": "89142ce1f613058ece554ea2cbf8eee409b19353"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-form/zipball/fd92e72ecfaab9a3b2e271e7752902e67b63a835",
-                "reference": "fd92e72ecfaab9a3b2e271e7752902e67b63a835",
+                "url": "https://api.github.com/repos/msbios/msbios-form/zipball/89142ce1f613058ece554ea2cbf8eee409b19353",
+                "reference": "89142ce1f613058ece554ea2cbf8eee409b19353",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-10-23T16:16:25+00:00"
+            "time": "2017-10-23T17:19:51+00:00"
         },
         {
             "name": "msbios/msbios",

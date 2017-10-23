@@ -6,14 +6,13 @@
 
 namespace MSBios\Voting\View\Helper;
 
-use MSBios\Form\FormAwareInterface;
-use MSBios\Form\FormAwareTrait;
+use MSBios\Form\FormElementAwareInterface;
+use MSBios\Form\FormElementAwareTrait;
 use MSBios\Stdlib\ObjectInterface;
 use MSBios\Voting\PollInterface;
 use MSBios\Voting\PollManagerInterface;
 use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Radio;
-use Zend\Form\Form;
 use Zend\Form\FormInterface;
 use Zend\View\Helper\AbstractHelper;
 
@@ -21,9 +20,9 @@ use Zend\View\Helper\AbstractHelper;
  * Class PollHelper
  * @package MSBios\Voting\View\Helper
  */
-class PollHelper extends AbstractHelper implements FormAwareInterface
+class PollHelper extends AbstractHelper implements FormElementAwareInterface
 {
-    use FormAwareTrait;
+    use FormElementAwareTrait;
 
     /** @var null */
     protected $identifier = null;
@@ -70,7 +69,7 @@ class PollHelper extends AbstractHelper implements FormAwareInterface
     public function form(PollInterface $poll)
     {
         // add radio values $this->form
-        return $this->form;
+        return $this->getFormElement();
     }
 
     /**
