@@ -37,9 +37,6 @@ return [
             View\Helper\PollHelper::class =>
                 PollForm::class
         ],
-        'initializers' => [
-            new FormElementAwareInitializer
-        ]
     ],
 
     'view_helpers' => [
@@ -49,6 +46,9 @@ return [
         ],
         'aliases' => [
             'poll' => View\Helper\PollHelper::class
+        ],
+        'initializers' => [
+            new FormElementAwareInitializer
         ]
     ],
 
