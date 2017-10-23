@@ -57,22 +57,35 @@ class PollHelper extends AbstractHelper
     }
 
     /**
-     * @param ObjectInterface $option
+     * @param $label
+     * @param $value
      * @return Radio
      */
-    public function optionElement(ObjectInterface $option)
+    protected function factoryOptionElement($label, $value)
     {
         return new Radio('poll_option_identifier', [
             'value_options' => [
                 [
-                    'value' => $option->get('id'),
-                    'label' => $option->get('name'),
+                    'label' => $label,
+                    'value' => $value,
                     'attributes' => [
                         'checked' => 'checked',
                     ]
                 ]
             ]
         ]);
+    }
+
+    /**
+     * @param ObjectInterface $option
+     * @return Radio
+     */
+    public function optionElement(ObjectInterface $option)
+    {
+        return $this->factoryOptionElement(
+            $option->get('id'),
+            $option->get('name')
+        );
     }
 
     /**

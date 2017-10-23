@@ -65,6 +65,5 @@ class PollPlugin extends AbstractPlugin
                 'required' => true,
             ]
         ]);
-
     }
 }
