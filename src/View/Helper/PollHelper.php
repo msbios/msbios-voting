@@ -6,6 +6,7 @@
 
 namespace MSBios\Voting\View\Helper;
 
+use MSBios\Stdlib\ObjectInterface;
 use MSBios\Voting\PollManagerInterface;
 use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Radio;
@@ -56,10 +57,10 @@ class PollHelper extends AbstractHelper
     }
 
     /**
-     * @param $option
-     * @return \Zend\Form\Element\Radio
+     * @param ObjectInterface $option
+     * @return Radio
      */
-    public function optionElement($option)
+    public function optionElement(ObjectInterface $option)
     {
         return new Radio('poll_option_identifier', [
             'value_options' => [
