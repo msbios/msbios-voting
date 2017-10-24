@@ -6,8 +6,6 @@
 
 namespace MSBios\Voting;
 
-use MSBios\Form\Initializer\FormElementAwareInitializer;
-use MSBios\Form\Initializer\FormInitializer;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -15,9 +13,6 @@ return [
         'factories' => [
             Module::class => Factory\ModuleFactory::class,
             PollManager::class => Factory\PollManagerFactory::class,
-        ],
-        'initializers' => [
-            new FormElementAwareInitializer
         ]
     ],
 
