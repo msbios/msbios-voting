@@ -28,6 +28,9 @@ class PollManager implements PollManagerInterface
     /** @var ObjectInterface */
     protected $current;
 
+    /** @var string */
+    protected $relation;
+
     /** @var array */
     protected $forms = [];
 
