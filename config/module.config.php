@@ -37,6 +37,8 @@ return [
                 Factory\PollFormFactory::class
         ],
         'aliases' => [
+            Controller\Plugin\PollPlugin::class =>
+                PollForm::class,
             View\Helper\PollHelper::class =>
                 PollForm::class
         ],
