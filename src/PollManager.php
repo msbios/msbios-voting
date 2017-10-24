@@ -5,6 +5,8 @@
  */
 namespace MSBios\Voting;
 
+use MSBios\Form\FormElementAwareInterface;
+use MSBios\Form\FormElementAwareTrait;
 use MSBios\Stdlib\ObjectInterface;
 use Zend\Config\Config;
 
@@ -13,19 +15,18 @@ use Zend\Config\Config;
  * @package MSBios\Voting
  * @link https://www.codexworld.com/online-poll-voting-system-php-mysql/
  */
-class PollManager implements PollManagerInterface
+class PollManager implements PollManagerInterface, FormElementAwareInterface
 {
+    use FormElementAwareTrait;
+
     /** @var Config */
     protected $polls;
 
-    /**
-     * PollManager constructor.
-     * @param Config $polls
-     */
-    public function __construct(Config $polls)
-    {
-        $this->polls = $polls;
-    }
+    /** @var ObjectInterface */
+    protected $current;
+
+    /** @var array */
+    protected $forms = [];
 
     /**
      * @param $id
@@ -34,7 +35,15 @@ class PollManager implements PollManagerInterface
      */
     public function find($id, $relation = null)
     {
-        return $this->polls->get($id);
+        // return $this->polls->get($id);
+    }
+
+    /**
+     * @return \Zend\Form\FormInterface
+     */
+    public function form()
+    {
+        return $this->getFormElement();
     }
 
     /**

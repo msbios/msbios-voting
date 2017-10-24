@@ -6,8 +6,6 @@
 
 namespace MSBios\Voting\Controller\Plugin;
 
-use MSBios\Form\FormElementAwareInterface;
-use MSBios\Form\FormElementAwareTrait;
 use MSBios\Voting\PollManagerInterface;
 use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\InputFilter\InputFilterInterface;
@@ -17,12 +15,13 @@ use Zend\Mvc\Controller\Plugin\AbstractPlugin;
  * Class PollPlugin
  * @package MSBios\Voting\Controller\Plugin
  */
-class PollPlugin extends AbstractPlugin implements FormElementAwareInterface
+class PollPlugin extends AbstractPlugin
 {
-    use FormElementAwareTrait;
-
     /** @var PollManagerInterface */
     protected $pollManager;
+
+    /** @var array */
+    protected $data = [];
 
     /**
      * PollPlugin constructor.
@@ -35,38 +34,54 @@ class PollPlugin extends AbstractPlugin implements FormElementAwareInterface
 
     /**
      * @param array $data
+     * @return $this
      */
-    public function setValue(array $data)
+    public function setData(array $data)
     {
-        /** @var InputFilterInterface $inputFilter */
-        $inputFilter = $this->getInputFilter();
+        ///** @var InputFilterInterface $inputFilter */
+        //$inputFilter = $this->getInputFilter();
+        //
+        //if ($inputFilter->setData($data)->isValid()) {
+        //    /** @var array $values */
+        //    $values = $inputFilter->getValues();
+        //    $this->pollManager->vote();
+        //}
 
-        if ($inputFilter->setData($data)->isValid()) {
-            /** @var array $values */
-            $values = $inputFilter->getValues();
-            $this->pollManager->vote();
-        }
+        return $this;
     }
 
     /**
-     * @return \Zend\InputFilter\InputFilterInterface
+     * @return bool
      */
-    protected function getInputFilter()
+    public function isValid()
     {
-        /** @var InputFilterFactory $factory */
-        return (new InputFilterFactory)->createInputFilter([
-            'poll_identifier' => [
-                'name' => 'poll_identifier',
-                'required' => true,
-            ],
-            'poll_relation' => [
-                'name' => 'poll_relation',
-                'required' => false,
-            ],
-            'poll_option_identifier' => [
-                'name' => 'poll_option_identifier',
-                'required' => true,
-            ]
-        ]);
+        return true;
     }
+
+    public function vote()
+    {
+        $this->pollManager->vote();
+    }
+
+    ///**
+    // * @return \Zend\InputFilter\InputFilterInterface
+    // */
+    //protected function getInputFilter()
+    //{
+    //    /** @var InputFilterFactory $factory */
+    //    return (new InputFilterFactory)->createInputFilter([
+    //        'poll_identifier' => [
+    //            'name' => 'poll_identifier',
+    //            'required' => true,
+    //        ],
+    //        'poll_relation' => [
+    //            'name' => 'poll_relation',
+    //            'required' => false,
+    //        ],
+    //        'poll_option_identifier' => [
+    //            'name' => 'poll_option_identifier',
+    //            'required' => true,
+    //        ]
+    //    ]);
+    //}
 }

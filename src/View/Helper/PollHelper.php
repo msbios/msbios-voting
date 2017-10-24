@@ -6,13 +6,8 @@
 
 namespace MSBios\Voting\View\Helper;
 
-use MSBios\Form\FormElementAwareInterface;
-use MSBios\Form\FormElementAwareTrait;
-use MSBios\Stdlib\ObjectInterface;
 use MSBios\Voting\PollManagerInterface;
 use Zend\Config\Config;
-use Zend\Form\Element\Hidden;
-use Zend\Form\Element\Radio;
 use Zend\Form\FormInterface;
 use Zend\View\Helper\AbstractHelper;
 
@@ -20,10 +15,8 @@ use Zend\View\Helper\AbstractHelper;
  * Class PollHelper
  * @package MSBios\Voting\View\Helper
  */
-class PollHelper extends AbstractHelper implements FormElementAwareInterface
+class PollHelper extends AbstractHelper
 {
-    use FormElementAwareTrait;
-
     /** @var null */
     protected $identifier = null;
 
@@ -68,62 +61,61 @@ class PollHelper extends AbstractHelper implements FormElementAwareInterface
     }
 
     /**
-     * @param ObjectInterface $poll
      * @return FormInterface
      */
-    public function form(ObjectInterface $poll)
+    public function form()
     {
         // add radio values $this->form
-        return $this->getFormElement();
+        return $this->pollManager->form();
     }
 
-    /**
-     * @param $label
-     * @param $value
-     * @return Radio
-     */
-    protected function factoryOptionElement($label, $value)
-    {
-        return new Radio('poll_option_identifier', [
-            'value_options' => [
-                [
-                    'label' => $label,
-                    'value' => $value,
-                    'attributes' => [
-                        'checked' => 'checked',
-                    ]
-                ]
-            ]
-        ]);
-    }
-
-    /**
-     * @param ObjectInterface $option
-     * @return Radio
-     */
-    public function optionElement(ObjectInterface $option)
-    {
-        return $this->factoryOptionElement(
-            $option->get('id'),
-            $option->get('name')
-        );
-    }
-
-    /**
-     * @return \Zend\Form\Element
-     */
-    public function identifierElement()
-    {
-        return (new Hidden('poll_identifier'))
-            ->setValue($this->identifier);
-    }
-
-    /**
-     * @return \Zend\Form\Element
-     */
-    public function relationElement()
-    {
-        return (new Hidden('poll_relation'))
-            ->setValue($this->relation);
-    }
+    ///**
+    // * @param $label
+    // * @param $value
+    // * @return Radio
+    // */
+    //protected function factoryOptionElement($label, $value)
+    //{
+    //    return new Radio('poll_option_identifier', [
+    //        'value_options' => [
+    //            [
+    //                'label' => $label,
+    //                'value' => $value,
+    //                'attributes' => [
+    //                    'checked' => 'checked',
+    //                ]
+    //            ]
+    //        ]
+    //    ]);
+    //}
+    //
+    ///**
+    // * @param ObjectInterface $option
+    // * @return Radio
+    // */
+    //public function optionElement(ObjectInterface $option)
+    //{
+    //    return $this->factoryOptionElement(
+    //        $option->get('id'),
+    //        $option->get('name')
+    //    );
+    //}
+    //
+    ///**
+    // * @return \Zend\Form\Element
+    // */
+    //public function identifierElement()
+    //{
+    //    return (new Hidden('poll_identifier'))
+    //        ->setValue($this->identifier);
+    //}
+    //
+    ///**
+    // * @return \Zend\Form\Element
+    // */
+    //public function relationElement()
+    //{
+    //    return (new Hidden('poll_relation'))
+    //        ->setValue($this->relation);
+    //}
 }

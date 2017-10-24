@@ -21,6 +21,11 @@ interface PollManagerInterface
     public function find($id, $relation = null);
 
     /**
+     * @return \Zend\Form\FormInterface
+     */
+    public function form();
+
+    /**
      * @param ObjectInterface $option
      */
     public function vote(ObjectInterface $option);
