@@ -46,4 +46,34 @@ class PollForm extends Form
             'name' => $this->config->get('default_handler_key')
         ]);
     }
+
+    /**
+     * @return \Zend\Form\ElementInterface
+     */
+    public function getOptionElement()
+    {
+        return $this->get(
+            $this->config->get('default_option_key')
+        );
+    }
+
+    /**
+     * @return \Zend\Form\ElementInterface
+     */
+    public function getRelationElement()
+    {
+        return $this->get(
+            $this->config->get('default_relation_key')
+        );
+    }
+
+    /**
+     * @return \Zend\Form\ElementInterface
+     */
+    public function getSubmitElement()
+    {
+        return $this->get(
+            $this->config->get('default_handler_key')
+        );
+    }
 }
