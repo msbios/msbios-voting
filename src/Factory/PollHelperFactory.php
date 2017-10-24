@@ -6,6 +6,7 @@
 namespace MSBios\Voting\Factory;
 
 use Interop\Container\ContainerInterface;
+use MSBios\Voting\Module;
 use MSBios\Voting\PollManager;
 use MSBios\Voting\View\Helper\PollHelper;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -25,7 +26,8 @@ class PollHelperFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         return new PollHelper(
-            $container->get(PollManager::class)
+            $container->get(PollManager::class),
+            $container->get(Module::class)
         );
     }
 }

@@ -9,8 +9,8 @@ namespace MSBios\Voting\View\Helper;
 use MSBios\Form\FormElementAwareInterface;
 use MSBios\Form\FormElementAwareTrait;
 use MSBios\Stdlib\ObjectInterface;
-use MSBios\Voting\PollInterface;
 use MSBios\Voting\PollManagerInterface;
+use Zend\Config\Config;
 use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Radio;
 use Zend\Form\FormInterface;
@@ -33,13 +33,18 @@ class PollHelper extends AbstractHelper implements FormElementAwareInterface
     /** @var  PollManagerInterface */
     protected $pollManager;
 
+    /** @var Config */
+    protected $config;
+
     /**
      * PollHelper constructor.
      * @param PollManagerInterface $pollManager
+     * @param Config $config
      */
-    public function __construct(PollManagerInterface $pollManager)
+    public function __construct(PollManagerInterface $pollManager, Config $config)
     {
         $this->pollManager = $pollManager;
+        $this->config = $config;
     }
 
     /**
