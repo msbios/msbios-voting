@@ -21,7 +21,7 @@ class Module implements
     AutoloaderProviderInterface,
     ServiceProviderInterface
 {
-    const VERSION = '1.0.14';
+    const VERSION = '1.0.15';
     /**
      * Returns configuration to merge with application configuration
      *
