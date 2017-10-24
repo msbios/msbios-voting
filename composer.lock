@@ -39,7 +39,7 @@
         },
         {
             "name": "msbios/form",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-form.git",
