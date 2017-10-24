@@ -16,6 +16,9 @@ return [
             Module::class => Factory\ModuleFactory::class,
             PollManager::class => Factory\PollManagerFactory::class,
         ],
+        'initializers' => [
+            new FormElementAwareInitializer
+        ]
     ],
 
     'controller_plugins' => [
@@ -25,9 +28,6 @@ return [
         ],
         'aliases' => [
             'poll' => Controller\Plugin\PollPlugin::class
-        ],
-        'initializers' => [
-            new FormElementAwareInitializer
         ]
     ],
 
@@ -37,9 +37,7 @@ return [
                 Factory\PollFormFactory::class
         ],
         'aliases' => [
-            Controller\Plugin\PollPlugin::class =>
-                PollForm::class,
-            View\Helper\PollHelper::class =>
+            PollManager::class =>
                 PollForm::class
         ],
     ],
@@ -51,9 +49,6 @@ return [
         ],
         'aliases' => [
             'poll' => View\Helper\PollHelper::class
-        ],
-        'initializers' => [
-            new FormElementAwareInitializer
         ]
     ],
 
