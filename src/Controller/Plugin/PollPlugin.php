@@ -6,6 +6,8 @@
 
 namespace MSBios\Voting\Controller\Plugin;
 
+use MSBios\Form\FormElementAwareInterface;
+use MSBios\Form\FormElementAwareTrait;
 use MSBios\Voting\PollManagerInterface;
 use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\InputFilter\InputFilterInterface;
@@ -15,8 +17,9 @@ use Zend\Mvc\Controller\Plugin\AbstractPlugin;
  * Class PollPlugin
  * @package MSBios\Voting\Controller\Plugin
  */
-class PollPlugin extends AbstractPlugin
+class PollPlugin extends AbstractPlugin implements FormElementAwareInterface
 {
+    use FormElementAwareTrait;
 
     /** @var PollManagerInterface */
     protected $pollManager;
