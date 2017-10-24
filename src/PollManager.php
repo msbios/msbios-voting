@@ -15,7 +15,7 @@ use Zend\Config\Config;
  * @package MSBios\Voting
  * @link https://www.codexworld.com/online-poll-voting-system-php-mysql/
  */
-class PollManager implements PollManagerInterface, FormElementAwareInterface
+class PollManager implements PollManagerInterface
 {
     use FormElementAwareTrait;
 
@@ -35,7 +35,6 @@ class PollManager implements PollManagerInterface, FormElementAwareInterface
      */
     public function find($id, $relation = null)
     {
-        // return $this->polls->get($id);
     }
 
     /**

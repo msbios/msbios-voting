@@ -6,8 +6,6 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
-        'MSBios\Voting\Resource',
-        'MSBios\Form',
         'Zend\Log',
         'Zend\Mvc\Plugin\FilePrg',
         'Zend\Form',
@@ -27,6 +25,8 @@ return [
         'MSBios\Theme',
         'MSBios\Navigation',
         'MSBios\Application',
+        'MSBios\Voting\Resource',
+        'MSBios\Form',
         'MSBios\Voting'
     ],
     // These are various options for the listeners attached to the ModuleManager

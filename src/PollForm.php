@@ -10,12 +10,13 @@ use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Radio;
 use Zend\Form\Element\Submit;
 use Zend\Form\Form;
+use Zend\InputFilter\InputProviderInterface;
 
 /**
  * Class PollForm
  * @package MSBios\Voting
  */
-class PollForm extends Form
+class PollForm extends Form implements InputProviderInterface
 {
     /** @var Config  */
     protected $config;
@@ -45,6 +46,27 @@ class PollForm extends Form
             'type' => Submit::class,
             'name' => $this->config->get('default_handler_key')
         ]);
+    }
+
+    /**
+     * Should return an array specification compatible with
+     * {@link Zend\InputFilter\Factory::createInput()}.
+     *
+     * @return array
+     */
+    public function getInputSpecification()
+    {
+        return [
+            $this->config->get('default_option_key') => [
+                'required' => true,
+            ],
+            $this->config->get('default_relation_key') => [
+                'required' => false,
+            ],
+            $this->config->get('default_handler_key') => [
+                'required' => true,
+            ]
+        ];
     }
 
     /**

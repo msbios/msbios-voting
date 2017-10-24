@@ -5,13 +5,14 @@
  */
 namespace MSBios\Voting;
 
+use MSBios\Form\FormElementAwareInterface;
 use MSBios\Stdlib\ObjectInterface;
 
 /**
  * Interface PollManagerInterface
  * @package MSBios\Voting
  */
-interface PollManagerInterface
+interface PollManagerInterface extends FormElementAwareInterface
 {
     /**
      * @param $id
