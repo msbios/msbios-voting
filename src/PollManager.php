@@ -20,6 +20,9 @@ class PollManager implements PollManagerInterface
     use FormElementAwareTrait;
 
     /** @var Config */
+    protected $options;
+
+    /** @var Config */
     protected $polls;
 
     /** @var ObjectInterface */
@@ -27,6 +30,15 @@ class PollManager implements PollManagerInterface
 
     /** @var array */
     protected $forms = [];
+
+    /**
+     * PollManager constructor.
+     * @param Config $options
+     */
+    public function __construct(Config $options)
+    {
+        $this->options = $options;
+    }
 
     /**
      * @param $id
