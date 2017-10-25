@@ -28,8 +28,9 @@ interface PollManagerInterface extends FormElementAwareInterface
 
     /**
      * @param $id
+     * @param $optionId
      * @param null $relation
-     * @return boolean
+     * @return mixed
      */
-    public function vote($id, $relation = null);
+    public function vote($id, $optionId, $relation = null);
 }

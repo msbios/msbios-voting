@@ -50,9 +50,10 @@ class PollManager implements PollManagerInterface
 
     /**
      * @param $id
+     * @param $optionId
      * @param null $relation
      */
-    public function vote($id, $relation = null)
+    public function vote($id, $optionId, $relation = null)
     {
         // TODO: Implement vote() method.
     }
