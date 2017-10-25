@@ -11,15 +11,17 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'service_manager' => [
         'factories' => [
-            Module::class => Factory\ModuleFactory::class,
-            PollManager::class => Factory\PollManagerFactory::class,
+            Module::class =>
+                Factory\ModuleFactory::class,
+            PollManager::class =>
+                InvokableFactory::class,
         ]
     ],
 
     'controller_plugins' => [
         'factories' => [
             Controller\Plugin\PollPlugin::class =>
-                InvokableFactory::class,
+                Factory\PollPluginFactory::class,
         ],
         'aliases' => [
             'poll' => Controller\Plugin\PollPlugin::class
