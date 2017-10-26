@@ -5,12 +5,10 @@
  */
 namespace MSBios\Voting;
 
-use MSBios\Form\Initializer\FormElementInitializer;
 use MSBios\ModuleInterface;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\ModuleManager\Feature\ServiceProviderInterface;
 
 /**
  * Class Module
@@ -18,10 +16,9 @@ use Zend\ModuleManager\Feature\ServiceProviderInterface;
  */
 class Module implements
     ModuleInterface,
-    AutoloaderProviderInterface,
-    ServiceProviderInterface
+    AutoloaderProviderInterface
 {
-    const VERSION = '1.0.24';
+    const VERSION = '1.0.25';
     /**
      * Returns configuration to merge with application configuration
      *
@@ -45,21 +42,6 @@ class Module implements
                     __NAMESPACE__ => __DIR__,
                 ],
             ],
-        ];
-    }
-
-    /**
-     * Expected to return \Zend\ServiceManager\Config object or array to
-     * seed such an object.
-     *
-     * @return array|\Zend\ServiceManager\Config
-     */
-    public function getServiceConfig()
-    {
-        return [
-            'initializers' => [
-                new FormElementInitializer
-            ]
         ];
     }
 }
