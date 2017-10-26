@@ -16,15 +16,14 @@ interface PollManagerInterface
     /**
      * @param $id
      * @param null $relation
-     * @return ObjectInterface
+     * @return mixed
      */
     public function find($id, $relation = null);
 
     /**
      * @param $id
-     * @param $optionId
      * @param null $relation
      * @return mixed
      */
-    public function vote($id, $optionId, $relation = null);
+    public function vote($id, $relation = null);
 }

@@ -17,7 +17,6 @@ class PollManager implements PollManagerInterface
     /**
      * @param $id
      * @param null $relation
-     * @return mixed
      */
     public function find($id, $relation = null)
     {
@@ -25,10 +24,9 @@ class PollManager implements PollManagerInterface
 
     /**
      * @param $id
-     * @param $optionId
      * @param null $relation
      */
-    public function vote($id, $optionId, $relation = null)
+    public function vote($id, $relation = null)
     {
         // TODO: Implement vote() method.
     }
