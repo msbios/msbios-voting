@@ -23,9 +23,6 @@ class PollPlugin extends AbstractPlugin
     /** @var Config */
     protected $options;
 
-    /** @var array */
-    protected $data = [];
-
     /**
      * PollPlugin constructor.
      * @param PollManagerInterface $pollManager
@@ -34,7 +31,6 @@ class PollPlugin extends AbstractPlugin
     public function __construct(PollManagerInterface $pollManager, Config $options)
     {
         $this->pollManager = $pollManager;
-        $this->options = $options;
     }
 
     /**

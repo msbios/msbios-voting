@@ -24,12 +24,12 @@ class PollManager implements PollManagerInterface
     }
 
     /**
-     * @param array $data
+     * @param $id
+     * @param $optionId
+     * @param null $relation
      */
-    public function vote(array $data)
+    public function vote($id, $optionId, $relation = null)
     {
         // TODO: Implement vote() method.
     }
-
-
 }

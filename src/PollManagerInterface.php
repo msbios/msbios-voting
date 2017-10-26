@@ -21,8 +21,10 @@ interface PollManagerInterface
     public function find($id, $relation = null);
 
     /**
-     * @param array $data
+     * @param $id
+     * @param $optionId
+     * @param null $relation
      * @return mixed
      */
-    public function vote(array $data);
+    public function vote($id, $optionId, $relation = null);
 }

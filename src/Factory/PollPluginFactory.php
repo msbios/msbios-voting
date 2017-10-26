@@ -7,7 +7,7 @@ namespace MSBios\Voting\Factory;
 
 use Interop\Container\ContainerInterface;
 use MSBios\Voting\Controller\Plugin\PollPlugin;
-use MSBios\Voting\Module;
+use MSBios\Voting\InputFilter\PollInputFilter;
 use MSBios\Voting\PollManager;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -27,7 +27,7 @@ class PollPluginFactory implements FactoryInterface
     {
         return new PollPlugin(
             $container->get(PollManager::class),
-            $container->get(Module::class)
+            $container->get('InputFilterManager')->get(PollInputFilter::class)
         );
     }
 }
