@@ -5,10 +5,7 @@
  */
 namespace MSBios\Voting;
 
-use MSBios\Form\FormElementAwareInterface;
-use MSBios\Form\FormElementAwareTrait;
 use MSBios\Stdlib\ObjectInterface;
-use Zend\Config\Config;
 
 /**
  * Class PollManager
@@ -17,20 +14,6 @@ use Zend\Config\Config;
  */
 class PollManager implements PollManagerInterface
 {
-    use FormElementAwareTrait;
-
-    /** @var Config */
-    protected $polls;
-
-    /** @var ObjectInterface */
-    protected $current;
-
-    /** @var string */
-    protected $relation;
-
-    /** @var array */
-    protected $forms = [];
-
     /**
      * @param $id
      * @param null $relation
@@ -41,18 +24,12 @@ class PollManager implements PollManagerInterface
     }
 
     /**
-     * @return \Zend\Form\FormInterface
+     * @param array $data
      */
-    public function form()
-    {
-        return $this->getFormElement();
-    }
-
-    /**
-     *
-     */
-    public function vote()
+    public function vote(array $data)
     {
         // TODO: Implement vote() method.
     }
+
+
 }

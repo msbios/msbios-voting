@@ -28,14 +28,16 @@ return [
         ]
     ],
 
+    'input_filters' => [
+        'factories' => [
+            InputFilter\PollInputFilter::class =>
+                InvokableFactory::class
+        ]
+    ],
+
     'form_elements' => [
         'factories' => [
-            PollForm::class =>
-                Factory\PollFormFactory::class
-        ],
-        'aliases' => [
-            PollManager::class =>
-                PollForm::class
+            Form\PollForm::class => InvokableFactory::class
         ],
     ],
 
@@ -51,26 +53,26 @@ return [
 
     Module::class => [
 
-        /**
-         *
-         * Expects: string
-         * Default: poll_option_identifier
-         */
-        'default_option_key' => 'poll_option_identifier',
-
-        /**
-         *
-         * Expects: string
-         * Default: poll_relation
-         */
-        'default_relation_key' => 'poll_relation',
-
-        /**
-         *
-         * Expects: string
-         * Default: poll_handler
-         */
-        'default_handler_key' => 'poll_identifier',
+        // /**
+        //  *
+        //  * Expects: string
+        //  * Default: poll_option_identifier
+        //  */
+        // 'default_option_key' => 'poll_option_identifier',
+        //
+        // /**
+        //  *
+        //  * Expects: string
+        //  * Default: poll_relation
+        //  */
+        // 'default_relation_key' => 'poll_relation',
+        //
+        // /**
+        //  *
+        //  * Expects: string
+        //  * Default: poll_handler
+        //  */
+        // 'default_handler_key' => 'poll_identifier',
 
         //'polls' => [
         //    'SOME_IDENTIFIER_KEY' => [

@@ -5,14 +5,13 @@
  */
 namespace MSBios\Voting;
 
-use MSBios\Form\FormElementAwareInterface;
 use MSBios\Stdlib\ObjectInterface;
 
 /**
  * Interface PollManagerInterface
  * @package MSBios\Voting
  */
-interface PollManagerInterface extends FormElementAwareInterface
+interface PollManagerInterface
 {
     /**
      * @param $id
@@ -22,12 +21,8 @@ interface PollManagerInterface extends FormElementAwareInterface
     public function find($id, $relation = null);
 
     /**
-     * @return \Zend\Form\FormInterface
-     */
-    public function form();
-
-    /**
+     * @param array $data
      * @return mixed
      */
-    public function vote();
+    public function vote(array $data);
 }

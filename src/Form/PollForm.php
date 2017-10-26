@@ -3,7 +3,7 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBios\Voting;
+namespace MSBios\Voting\Form;
 
 use Zend\Config\Config;
 use Zend\Form\Element\Hidden;
@@ -14,7 +14,7 @@ use Zend\InputFilter\InputProviderInterface;
 
 /**
  * Class PollForm
- * @package MSBios\Voting
+ * @package MSBios\Voting\Form
  */
 class PollForm extends Form implements InputProviderInterface
 {
@@ -37,14 +37,14 @@ class PollForm extends Form implements InputProviderInterface
     {
         parent::init();
         $this->add([
-            'type' => Radio::class,
-            'name' => $this->config->get('default_option_key')
+            'type' => Hidden::class,
+            'name' => 'poll_option_identifier'
         ])->add([
             'type' => Hidden::class,
-            'name' => $this->config->get('default_relation_key')
+            'name' => 'poll_relation'
         ])->add([
             'type' => Submit::class,
-            'name' => $this->config->get('default_handler_key')
+            'name' => 'poll_identifier'
         ]);
     }
 
