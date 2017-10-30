@@ -14,11 +14,11 @@ use MSBios\Stdlib\ObjectInterface;
 interface PollManagerInterface
 {
     /**
-     * @param $id
+     * @param $idOrCode
      * @param null $relation
      * @return mixed
      */
-    public function find($id, $relation = null);
+    public function find($idOrCode, $relation = null);
 
     /**
      * @param $id
@@ -26,4 +26,16 @@ interface PollManagerInterface
      * @return mixed
      */
     public function vote($id, $relation = null);
+
+    /**
+     * @param ObjectInterface $poll
+     * @return mixed
+     */
+    public function isVoted(ObjectInterface $poll);
+
+    /**
+     * @param ObjectInterface $poll
+     * @return mixed
+     */
+    public function votes(ObjectInterface $poll);
 }

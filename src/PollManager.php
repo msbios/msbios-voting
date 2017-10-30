@@ -15,11 +15,12 @@ use MSBios\Stdlib\ObjectInterface;
 class PollManager implements PollManagerInterface
 {
     /**
-     * @param $id
+     * @param $idOrCode
      * @param null $relation
      */
-    public function find($id, $relation = null)
+    public function find($idOrCode, $relation = null)
     {
+        // TODO: Implement find() method.
     }
 
     /**
@@ -29,5 +30,23 @@ class PollManager implements PollManagerInterface
     public function vote($id, $relation = null)
     {
         // TODO: Implement vote() method.
+    }
+
+    /**
+     * @param ObjectInterface $poll
+     * @return mixed
+     */
+    public function isVoted(ObjectInterface $poll)
+    {
+        // TODO: Implement isVoted() method.
+    }
+
+    /**
+     * @param ObjectInterface $poll
+     * @return mixed
+     */
+    public function votes(ObjectInterface $poll)
+    {
+        // TODO: Implement votes() method.
     }
 }
