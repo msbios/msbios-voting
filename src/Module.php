@@ -19,7 +19,7 @@ class Module implements
     AutoloaderProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.34';
+    const VERSION = '1.0.35';
 
     /**
      * Returns configuration to merge with application configuration
