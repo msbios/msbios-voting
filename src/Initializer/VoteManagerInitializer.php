@@ -4,7 +4,7 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 
-namespace MSBios\Voting\Doctrine\Initialized;
+namespace MSBios\Voting\Initialized;
 
 use Interop\Container\ContainerInterface;
 use MSBios\Voting\VoteManager;
@@ -13,7 +13,7 @@ use Zend\ServiceManager\Initializer\InitializerInterface;
 
 /**
  * Class VoteManagerInitializer
- * @package MSBios\Voting\Doctrine\Initialized
+ * @package MSBios\Voting\Initialized
  */
 class VoteManagerInitializer implements InitializerInterface
 {

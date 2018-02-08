@@ -7,8 +7,8 @@
 namespace MSBios\Voting\Initialized;
 
 use Interop\Container\ContainerInterface;
-use MSBios\Voting\VoteManager;
-use MSBios\Voting\VoteManagerAwareInterface;
+use MSBios\Voting\OptionManager;
+use MSBios\Voting\OptionManagerAwareInterface;
 use Zend\ServiceManager\Initializer\InitializerInterface;
 
 /**
@@ -26,16 +26,16 @@ class OptionManagerInitializer implements InitializerInterface
      */
     public function __invoke(ContainerInterface $container, $instance)
     {
-        if ($instance instanceof VoteManagerAwareInterface) {
+        if ($instance instanceof OptionManagerAwareInterface) {
             $instance->setVoteManager(
-                $container->get(VoteManager::class)
+                $container->get(OptionManager::class)
             );
         }
     }
 
     /**
      * @param $an_array
-     * @return PollManagerInitializer
+     * @return OptionManagerInitializer
      */
     public static function __set_state($an_array)
     {
