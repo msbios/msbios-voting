@@ -4,7 +4,7 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 
-namespace MSBios\Voting\Initialized;
+namespace MSBios\Voting\Initializer;
 
 use Interop\Container\ContainerInterface;
 use MSBios\Voting\VoteManager;
@@ -12,8 +12,8 @@ use MSBios\Voting\VoteManagerAwareInterface;
 use Zend\ServiceManager\Initializer\InitializerInterface;
 
 /**
- * Class VoteManagerInitializer
- * @package MSBios\Voting\Doctrine\Initialized
+ * Class PollManagerInitializer
+ * @package MSBios\Voting\Initializer
  */
 class PollManagerInitializer implements InitializerInterface
 {
