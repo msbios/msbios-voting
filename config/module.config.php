@@ -15,6 +15,10 @@ return [
                 Factory\ModuleFactory::class,
             PollManager::class =>
                 InvokableFactory::class,
+            OptionManager::class =>
+                InvokableFactory::class,
+            VoteManager::class =>
+                InvokableFactory::class
         ]
     ],
 
@@ -74,20 +78,20 @@ return [
          */
         'check_manager' => null,
 
-         /**
-          *
-          * Expects: array
-          * Default: []
-          */
-         'vote_resolvers' => [
-         ],
+        /**
+         *
+         * Expects: array
+         * Default: []
+         */
+        'vote_resolvers' => [
+        ],
 
-         /**
-          *
-          * Expects: array
-          * Default: []
-          */
-         'check_resolvers' => [
-         ]
+        /**
+         *
+         * Expects: array
+         * Default: []
+         */
+        'check_resolvers' => [
+        ]
     ]
 ];
