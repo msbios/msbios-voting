@@ -6,6 +6,8 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'MSBios\Db',
+        'Zend\Db',
         'MSBios\Test',
         'MSBios\Portal',
         'MSBios\CPanel',
