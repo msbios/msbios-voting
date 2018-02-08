@@ -1,7 +1,7 @@
 {
   "name": "msbios/voting",
   "description": "MSBios Voting",
-  "license": "GPL",
+  "license": "MIT",
   "keywords": [
     "php"
   ],
