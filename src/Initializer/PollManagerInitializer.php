@@ -27,7 +27,7 @@ class PollManagerInitializer implements InitializerInterface
     public function __invoke(ContainerInterface $container, $instance)
     {
         if ($instance instanceof PollManagerAwareInterface) {
-            $instance->setVoteManager(
+            $instance->setPollManager(
                 $container->get(PollManager::class)
             );
         }
