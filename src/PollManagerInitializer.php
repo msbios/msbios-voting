@@ -4,25 +4,22 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 
-namespace MSBios\Voting\Initializer;
+namespace MSBios\Voting;
 
 use Interop\Container\ContainerInterface;
-use MSBios\Voting\PollManager;
-use MSBios\Voting\PollManagerAwareInterface;
 use Zend\ServiceManager\Initializer\InitializerInterface;
 
 /**
  * Class PollManagerInitializer
- * @package MSBios\Voting\Initializer
+ * @package MSBios\Voting
  */
 class PollManagerInitializer implements InitializerInterface
 {
     /**
-     * Initialize the given instance
+     * @inheritdoc
      *
-     * @param  ContainerInterface $container
-     * @param  object $instance
-     * @return void
+     * @param ContainerInterface $container
+     * @param object $instance
      */
     public function __invoke(ContainerInterface $container, $instance)
     {
@@ -34,6 +31,8 @@ class PollManagerInitializer implements InitializerInterface
     }
 
     /**
+     * @inheritdoc
+     *
      * @param $an_array
      * @return PollManagerInitializer
      */

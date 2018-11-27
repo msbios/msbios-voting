@@ -60,7 +60,7 @@ return [
         /**
          *
          * Expects: string
-         * Default: MSBios\Voting\Doctrine\Provider\Poll\RelationProvider
+         * Default: MSBios\Voting\Provider\Poll\RelationProvider
          */
         'poll_provider' => null,
 
@@ -74,6 +74,13 @@ return [
         /**
          *
          * Expects: string
+         * Default: MSBios\Voting\VoteResolver
+         */
+        'vote_resolver' => null,
+
+        /**
+         *
+         * Expects: string
          * Default: MSBios\Voting\Doctrine\CheckManager
          */
         'check_manager' => null,
@@ -81,7 +88,7 @@ return [
         /**
          *
          * Expects: array
-         * Default: []
+         * Default: [ ... ]
          */
         'vote_resolvers' => [
         ],
@@ -89,7 +96,7 @@ return [
         /**
          *
          * Expects: array
-         * Default: []
+         * Default: [ ... ]
          */
         'check_resolvers' => [
         ]

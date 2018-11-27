@@ -5,8 +5,7 @@
  */
 namespace MSBios\Voting\Form;
 
-use Zend\Form\Element\Hidden;
-use Zend\Form\Element\Submit;
+use Zend\Form\Element;
 use Zend\Form\Form;
 
 /**
@@ -15,17 +14,23 @@ use Zend\Form\Form;
  */
 class PollForm extends Form
 {
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         parent::init();
         $this->add([
-            'type' => Hidden::class,
+            'type' => Element\Hidden::class,
             'name' => 'poll_option_identifier'
         ])->add([
-            'type' => Hidden::class,
+            'type' => Element\Hidden::class,
             'name' => 'poll_relation'
         ])->add([
-            'type' => Submit::class,
+            'type' => Element\Hidden::class,
+            'name' => 'poll_redirect'
+        ])->add([
+            'type' => Element\Submit::class,
             'name' => 'poll_identifier'
         ]);
     }
